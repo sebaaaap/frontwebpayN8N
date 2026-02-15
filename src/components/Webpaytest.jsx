@@ -2,12 +2,12 @@ import { useState } from "react";
 import { api } from "../api";
 
 export default function WebPayTest() {
-    const [amount, setAmount] = useState(5000);
+    const [amount, setAmount] = useState("5000");
     const [result, setResult] = useState(null);
 
     const createPayment = async () => {
         try {
-            const res = await api.post("/create-payment", { amount });
+            const res = await api.post("/create-payment", { amount: Number(amount) });
             setResult(res.data);
 
             // redirige a WebPay
@@ -25,7 +25,7 @@ export default function WebPayTest() {
             <input
                 type="number"
                 value={amount}
-                onChange={(e) => setAmount(Number(e.target.value))}
+                onChange={(e) => setAmount(e.target.value)}
             />
 
             <button onClick={createPayment} style={{ marginLeft: 10 }}>
