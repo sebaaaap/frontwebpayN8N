@@ -58,9 +58,9 @@ export default function PaymentResult() {
                         </div>
                         <button
                             style={styles.buttonWhatsApp}
-                            onClick={() => window.open("https://wa.me/", "_blank")}
+                            onClick={() => window.location.href = "https://wa.me/569XXXXXXXX"}
                         >
-                            Volver a WhatsApp
+                            Volver al Chat
                         </button>
                         <button style={styles.buttonSecondary} onClick={() => window.location.href = "/"}>
                             Ir al Inicio
