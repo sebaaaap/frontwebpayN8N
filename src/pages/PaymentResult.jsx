@@ -56,8 +56,14 @@ export default function PaymentResult() {
                             <p><strong>Orden:</strong> {details?.buy_order}</p>
                             <p><strong>Monto:</strong> ${details?.amount?.toLocaleString()}</p>
                         </div>
-                        <button style={styles.buttonSuccess} onClick={() => window.location.href = "/"}>
-                            Volver al Inicio
+                        <button
+                            style={styles.buttonWhatsApp}
+                            onClick={() => window.open("https://wa.me/", "_blank")}
+                        >
+                            Volver a WhatsApp
+                        </button>
+                        <button style={styles.buttonSecondary} onClick={() => window.location.href = "/"}>
+                            Ir al Inicio
                         </button>
                     </>
                 )}
@@ -136,10 +142,24 @@ const styles = {
         textAlign: "left",
         fontSize: "0.9rem"
     },
-    buttonSuccess: {
-        background: "#10b981",
+    buttonWhatsApp: {
+        background: "#25D366",
         color: "#fff",
         border: "none",
+        padding: "0.75rem 2rem",
+        borderRadius: "0.75rem",
+        fontSize: "1rem",
+        fontWeight: "700",
+        cursor: "pointer",
+        transition: "all 0.2s",
+        width: "100%",
+        marginBottom: "0.75rem",
+        boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)"
+    },
+    buttonSecondary: {
+        background: "#f3f4f6",
+        color: "#4b5563",
+        border: "1px solid #e5e7eb",
         padding: "0.75rem 2rem",
         borderRadius: "0.75rem",
         fontSize: "1rem",
